@@ -6,7 +6,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["task_1/WebApi.csproj", "task_1/"]
-RUN dotnet restore "task_1/WebApi.csproj"
+RUN dotnet restore "WebApi.csproj"
 COPY . .
 WORKDIR "/src/task_1"
 RUN dotnet build "WebApi.csproj" -c Release -o /app/build
